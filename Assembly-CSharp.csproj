@@ -36,7 +36,15 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Bin.cs" />
+     <Compile Include="Assets\Scripts\Book.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\InkMachineTouchInput.cs" />
+     <Compile Include="Assets\Scripts\InkedBooks.cs" />
+     <Compile Include="Assets\Scripts\PaperCollectedBar.cs" />
+     <Compile Include="Assets\Scripts\TouchInput.cs" />
+     <Compile Include="Assets\Scripts\Wobble.cs" />
+     <None Include="Assets\Shaders\Liquid.shader" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.20f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -213,6 +221,9 @@
     </Reference>
     <Reference Include="UnityEditor">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.20f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween">
+        <HintPath>D:/Dev Stuff/Anmol Unity Projects/Recycling Hyper casual game/Assets/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.20f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -588,6 +599,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{e861a85c-5407-28d9-b752-e61350504b3c}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
