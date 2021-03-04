@@ -10,11 +10,15 @@ public class GameManager : MonoBehaviour
     public float maxPaperCount;
     [HideInInspector] public float inkLevel = 0f;
     public float maxInkLevel;
+    [HideInInspector] public int booksDroppedInTankCount = 0;
     public float slideAnimWaitTime = 1f;
     public GameObject paperCollectLevel;
     public GameObject inkFillLevel;
+    public GameObject recycleLevel;
     public GameObject inkFillSlider;
+    public GameObject booksInTankSlider;
     public GameObject bin;
+    public GameObject tub;
     public Canvas stage1Canvas;
     public Canvas stage2Canvas;
     public RectTransform transitionImage1;
@@ -23,6 +27,7 @@ public class GameManager : MonoBehaviour
     public Camera cam;
     public Vector3 newCamPosition;
     public Vector3 newCamRotation;
+    public Vector3 tubPos;
     public InkMachineTouchInput inkMachineTouchInput;
     public InkedBooks inkedBooks;
     private void Start()
@@ -49,6 +54,11 @@ public class GameManager : MonoBehaviour
 
     IEnumerator SlideAnimation()
     {
+        // Get coins
+        CoinManager.instance.GetCoins();
+        yield return new WaitForSeconds(0.55f);
+        CoinManager.instance.SetCoinText(50);
+
         // Wait
         yield return new WaitForSeconds(0.5f);
 
@@ -79,18 +89,22 @@ public class GameManager : MonoBehaviour
     {
         inkMachineTouchInput.enabled = false;
 
+        // Get coins
+        CoinManager.instance.GetCoins();
+        yield return new WaitForSeconds(0.55f);
+        CoinManager.instance.SetCoinText(100);
+
         // Wait
         yield return new WaitForSeconds(0.5f);
 
         // Slide In effect
         transitionImage2.DOAnchorPos(Vector2.zero, 0.5f);
-
         // Wait
         yield return new WaitForSeconds(slideAnimWaitTime);
 
         // Slide In effect
-        transitionImage2.DOAnchorPos(new Vector2(-1100, 0), 0.5f);
-
+        transitionImage2.DOAnchorPos(new Vector2(-1100, 0), 1f);
+        booksInTankSlider.SetActive(true);
         inkFillSlider.SetActive(false);
         bin.SetActive(true);
     }
@@ -99,8 +113,23 @@ public class GameManager : MonoBehaviour
     {
         inkedBooks.enabled = false;
 
-        // Wait
+        // Get coins
+        CoinManager.instance.GetCoins();
+        yield return new WaitForSeconds(0.55f);
+        CoinManager.instance.SetCoinText(200);
+
+        // Get coins
+        CoinManager.instance.GetCoins();
         yield return new WaitForSeconds(0.5f);
+        CoinManager.instance.SetCoinText(50);
+
+        // Move camera to tub 
+        cam.transform.DOMove(tubPos, 1f);
+
+        // Wait
+        yield return new WaitForSeconds(1f);
+
+        booksInTankSlider.SetActive(false);
 
         // Slide In effect
         transitionImage2.DOAnchorPos(Vector2.zero, 0.5f);
@@ -112,5 +141,11 @@ public class GameManager : MonoBehaviour
         transitionImage2.DOAnchorPos(new Vector2(-1100, 0), 0.5f);
 
         inkFillLevel.SetActive(false);
+
+        tub.SetActive(false);
+
+        // Move camera back to previous position and enable new stage objects
+        cam.transform.DOMove(newCamPosition, 1f);
+        recycleLevel.SetActive(true);
     }
 }

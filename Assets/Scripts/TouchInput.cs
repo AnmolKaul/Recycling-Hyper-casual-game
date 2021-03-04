@@ -4,16 +4,38 @@ using UnityEngine;
 
 public class TouchInput : MonoBehaviour
 {
-    [SerializeField] bool canTouch = true;
-    public bool SetTouch { get { return canTouch; } set { canTouch = value; } }
     private float speed;
     private Vector3 deltaPosition, touchPos;
-    GameManager gameManager;
+    public RectTransform hand1;
+    public RectTransform hand2;
 
     private void Start()
     {
-        gameManager = FindObjectOfType<GameManager>();
-        speed = 0.003f;
+        speed = 0f;
+        StartCoroutine(Tutorial());
+    }
+
+    IEnumerator Tutorial()
+    {
+        // Hand tutorial
+        yield return new WaitForSeconds(1f);
+
+        // First hand 
+        TutorialManager.instance.EnableHand(hand1);
+        TutorialManager.instance.MoveHand(new Vector2(-80f, -888f), hand1);
+        TutorialManager.instance.ScaleHand(hand1);
+        yield return new WaitForSeconds(2f);
+        TutorialManager.instance.DisableHand(hand1);
+
+        // Second hand
+        TutorialManager.instance.EnableHand(hand2);
+        TutorialManager.instance.MoveHand(new Vector2(-80f, -888f), hand2);
+        TutorialManager.instance.ScaleHand(hand2);
+        yield return new WaitForSeconds(2f);
+        TutorialManager.instance.DisableHand(hand2);
+
+        yield return new WaitForSeconds(0.5f);
+        speed = 0.005f;
     }
 
     private void OnMouseDown()

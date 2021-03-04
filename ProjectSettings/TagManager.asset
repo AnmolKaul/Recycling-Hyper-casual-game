@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Bin
   - Books
+  - Recycle
   layers:
   - Default
   - TransparentFX

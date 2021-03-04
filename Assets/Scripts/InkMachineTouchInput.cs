@@ -10,6 +10,7 @@ public class InkMachineTouchInput : MonoBehaviour
     private GameManager gameManager;
     public Transform inkBox;
     public float inkHeightIncrement;
+    public bool canFill = false;
 
     private void Start()
     {
@@ -18,7 +19,7 @@ public class InkMachineTouchInput : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && canFill)
         {
             if (gameManager.inkLevel >= gameManager.maxInkLevel)
             {
