@@ -81,6 +81,7 @@ public class Binrotate : MonoBehaviour
             if (!xRotation) deltaY = 0;
             if (invertX) deltaY *= -1;
             if (invertY) deltaX *= -1;
+
             transform.Rotate(deltaX, deltaY, 0, Space.World);
 
             m_previousX = Input.mousePosition.x;

@@ -17,6 +17,11 @@ public class Book : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Bin"))
         {
+            // Play book dropped sound effect
+            Sound.instance.BookDropped();
+            // Generate crumpled paper particle effect
+            Effects.instance.PlayEffect(1, transform.position);
+
             // Check if the bin is full or not
             if (gameManager.paperCount < gameManager.maxPaperCount)
             {

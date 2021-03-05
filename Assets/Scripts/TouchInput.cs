@@ -12,6 +12,7 @@ public class TouchInput : MonoBehaviour
     private void Start()
     {
         speed = 0f;
+        Sound.instance.GameMusic(1);
         StartCoroutine(Tutorial());
     }
 

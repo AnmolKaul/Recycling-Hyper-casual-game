@@ -17,7 +17,6 @@ public class InkedBooks : MonoBehaviour
         touchInput = FindObjectOfType<InkMachineTouchInput>();
         StartCoroutine(Tutorial());
     }
-
     IEnumerator Tutorial()
     {
         yield return new WaitForSeconds(1f);

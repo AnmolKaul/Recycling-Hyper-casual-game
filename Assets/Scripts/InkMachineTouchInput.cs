@@ -15,8 +15,10 @@ public class InkMachineTouchInput : MonoBehaviour
     private void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
-    }
 
+        // Play boiling water sound effect
+        Sound.instance.BoilingWater(1);
+    }
     private void Update()
     {
         if (Input.GetMouseButton(0) && canFill)

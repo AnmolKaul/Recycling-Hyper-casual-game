@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     public GameObject booksInTankSlider;
     public GameObject bin;
     public GameObject tub;
+    public GameObject stool;
     public Canvas stage1Canvas;
     public Canvas stage2Canvas;
     public RectTransform transitionImage1;
@@ -32,6 +33,7 @@ public class GameManager : MonoBehaviour
     public InkedBooks inkedBooks;
     private void Start()
     {
+        Physics.gravity = new Vector3(0, -40f, 0);
         paperCollectLevel.SetActive(true);
         stage1Canvas.gameObject.SetActive(true);
         stage2Canvas.gameObject.SetActive(false);
@@ -56,6 +58,7 @@ public class GameManager : MonoBehaviour
     {
         // Get coins
         CoinManager.instance.GetCoins();
+        Sound.instance.CoinSound();
         yield return new WaitForSeconds(0.55f);
         CoinManager.instance.SetCoinText(50);
 
@@ -91,6 +94,7 @@ public class GameManager : MonoBehaviour
 
         // Get coins
         CoinManager.instance.GetCoins();
+        Sound.instance.CoinSound();
         yield return new WaitForSeconds(0.55f);
         CoinManager.instance.SetCoinText(100);
 
@@ -107,6 +111,7 @@ public class GameManager : MonoBehaviour
         booksInTankSlider.SetActive(true);
         inkFillSlider.SetActive(false);
         bin.SetActive(true);
+        stool.SetActive(true);
     }
 
     IEnumerator BooksDroppedInTank()
@@ -115,13 +120,9 @@ public class GameManager : MonoBehaviour
 
         // Get coins
         CoinManager.instance.GetCoins();
+        Sound.instance.CoinSound();
         yield return new WaitForSeconds(0.55f);
         CoinManager.instance.SetCoinText(200);
-
-        // Get coins
-        CoinManager.instance.GetCoins();
-        yield return new WaitForSeconds(0.5f);
-        CoinManager.instance.SetCoinText(50);
 
         // Move camera to tub 
         cam.transform.DOMove(tubPos, 1f);

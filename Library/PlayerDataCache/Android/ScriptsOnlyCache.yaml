@@ -4,11 +4,14 @@ ScriptsOnlyBuild:
     - Binrotate
     - Book
     - BooksDroppedBar
+    - CoinManager
+    - Effects
     - GameManager
     - InkMachineTouchInput
     - InkedBooks
     - Menu
     - PaperCollectedBar
+    - Sound
     - TouchInput
     - TutorialManager
     - WireControl
@@ -26,10 +29,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -60,6 +61,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
     - Class: 104
@@ -77,21 +82,23 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11916}
     - Class: 114
-      Script: {instanceID: 12200}
+      Script: {instanceID: 12098}
     - Class: 114
-      Script: {instanceID: 12288}
+      Script: {instanceID: 12204}
     - Class: 114
-      Script: {instanceID: 12510}
+      Script: {instanceID: 12292}
     - Class: 114
-      Script: {instanceID: 12524}
+      Script: {instanceID: 12516}
     - Class: 114
-      Script: {instanceID: 12714}
+      Script: {instanceID: 12530}
     - Class: 114
-      Script: {instanceID: 12776}
+      Script: {instanceID: 12720}
     - Class: 114
-      Script: {instanceID: 12928}
+      Script: {instanceID: 12782}
     - Class: 114
-      Script: {instanceID: 13132}
+      Script: {instanceID: 12934}
+    - Class: 114
+      Script: {instanceID: 13138}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -164,26 +171,40 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11890}
     - Class: 114
-      Script: {instanceID: 12462}
+      Script: {instanceID: 12056}
     - Class: 114
-      Script: {instanceID: 12528}
+      Script: {instanceID: 12294}
     - Class: 114
-      Script: {instanceID: 12548}
+      Script: {instanceID: 12468}
     - Class: 114
-      Script: {instanceID: 12776}
+      Script: {instanceID: 12516}
     - Class: 114
-      Script: {instanceID: 12944}
+      Script: {instanceID: 12534}
     - Class: 114
-      Script: {instanceID: 13026}
+      Script: {instanceID: 12554}
     - Class: 114
-      Script: {instanceID: 13132}
+      Script: {instanceID: 12720}
     - Class: 114
-      Script: {instanceID: 13140}
+      Script: {instanceID: 12782}
+    - Class: 114
+      Script: {instanceID: 12950}
+    - Class: 114
+      Script: {instanceID: 13032}
+    - Class: 114
+      Script: {instanceID: 13138}
+    - Class: 114
+      Script: {instanceID: 13146}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
       Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
@@ -300,7 +321,7 @@ ScriptsOnlyBuild:
     className: GridLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 260c29890eca017b914392c36ead2897
+      Hash: 638a5cb5c5a8e1811a36163dd825534c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: InkMachineTouchInput
@@ -330,7 +351,7 @@ ScriptsOnlyBuild:
     className: PhysicsRaycaster
   - hash:
       serializedVersion: 2
-      Hash: c416a79f7aa2c326242853ea0f9076d3
+      Hash: a31505a6817797b36fadd38bf731e915
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: WireControl
@@ -384,7 +405,7 @@ ScriptsOnlyBuild:
     className: Shadow
   - hash:
       serializedVersion: 2
-      Hash: 9e0871bcfc72e404c6b8169056d10c81
+      Hash: 6957e53758cec412aadc95f9de7d9caf
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Menu
@@ -432,10 +453,22 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
+      Hash: 086cb55b8b8451b81f14ef098972c49c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CoinManager
+  - hash:
+      serializedVersion: 2
       Hash: d4020bafcd3ccbb5601a6e6c8ac78be0
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: ScrollRect
+  - hash:
+      serializedVersion: 2
+      Hash: abe5d3694b25ca5e15a4c4e7c554e919
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Sound
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -480,6 +513,12 @@ ScriptsOnlyBuild:
     className: Button
   - hash:
       serializedVersion: 2
+      Hash: 9132fd32ff52349df6cff1fb926aa693
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Effects
+  - hash:
+      serializedVersion: 2
       Hash: f84d945e5e1ca985698660fc26e9657f
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -492,7 +531,7 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 6611a161fe0fd0d740f2ebe1e921d1bb
+      Hash: 4ea3f1e19e5aaae35fa76fd819081cc5
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
